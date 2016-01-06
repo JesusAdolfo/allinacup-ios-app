@@ -10,6 +10,7 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
 
+    @IBOutlet weak var Open: UIBarButtonItem!
     //HIDES THE STATUS BAR
 //    override func prefersStatusBarHidden() -> Bool {
 //        return true
@@ -52,7 +53,7 @@ class RestaurantTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()   
     }
     
     override func viewWillAppear(animated: Bool) {

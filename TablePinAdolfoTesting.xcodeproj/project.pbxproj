@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B057868E1C211407000BB5B4 /* beverages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B057868C1C211407000BB5B4 /* beverages.storyboard */; };
+		B05FA61A1C3DA8D600EC0C17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FA6191C3DA8D600EC0C17 /* LoginVC.swift */; };
 		B06A3A521C174A7F00AD6211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A3A511C174A7F00AD6211 /* AppDelegate.swift */; };
 		B06A3A571C174A7F00AD6211 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06A3A551C174A7F00AD6211 /* Main.storyboard */; };
 		B06A3A591C174A7F00AD6211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06A3A581C174A7F00AD6211 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B057868D1C211407000BB5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/beverages.storyboard; sourceTree = "<group>"; };
+		B05FA6191C3DA8D600EC0C17 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B06A3A4E1C174A7F00AD6211 /* TablePinAdolfoTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TablePinAdolfoTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06A3A511C174A7F00AD6211 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06A3A561C174A7F00AD6211 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				B06A3A511C174A7F00AD6211 /* AppDelegate.swift */,
 				B06A3A551C174A7F00AD6211 /* Main.storyboard */,
+				B057868C1C211407000BB5B4 /* beverages.storyboard */,
 				B093E5711C1F6EDA00B70B13 /* desserts.storyboard */,
 				B093E56E1C1F6E1B00B70B13 /* cart.storyboard */,
 				B06A3A581C174A7F00AD6211 /* Assets.xcassets */,
@@ -80,6 +85,7 @@
 				B081F4361C1B157900F6CC84 /* Food.swift */,
 				B081F4381C1CB53000F6CC84 /* FoodDetailTableViewCell.swift */,
 				B06C60C21C1CD03000944137 /* MenuTableViewCell.swift */,
+				B05FA6191C3DA8D600EC0C17 /* LoginVC.swift */,
 			);
 			path = TablePinAdolfoTesting;
 			sourceTree = "<group>";
@@ -110,7 +116,7 @@
 		B06A3A461C174A7E00AD6211 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Jesus Adolfo";
 				TargetAttributes = {
@@ -150,6 +156,7 @@
 				B093E5701C1F6E1B00B70B13 /* cart.storyboard in Resources */,
 				B093E5721C1F6EDA00B70B13 /* desserts.storyboard in Resources */,
 				B06A3A5C1C174A7F00AD6211 /* LaunchScreen.storyboard in Resources */,
+				B057868E1C211407000BB5B4 /* beverages.storyboard in Resources */,
 				B06A3A591C174A7F00AD6211 /* Assets.xcassets in Resources */,
 				B06A3A571C174A7F00AD6211 /* Main.storyboard in Resources */,
 			);
@@ -164,6 +171,7 @@
 			files = (
 				B081F4391C1CB53000F6CC84 /* FoodDetailTableViewCell.swift in Sources */,
 				B06A3A641C174BB000AD6211 /* RestaurantTableViewController.swift in Sources */,
+				B05FA61A1C3DA8D600EC0C17 /* LoginVC.swift in Sources */,
 				B06C60C31C1CD03000944137 /* MenuTableViewCell.swift in Sources */,
 				B081F4371C1B157900F6CC84 /* Food.swift in Sources */,
 				B06C60C11C1CC59F00944137 /* FoodDetailViewController.swift in Sources */,
@@ -174,6 +182,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B057868C1C211407000BB5B4 /* beverages.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B057868D1C211407000BB5B4 /* Base */,
+			);
+			name = beverages.storyboard;
+			sourceTree = "<group>";
+		};
 		B06A3A551C174A7F00AD6211 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,10 +302,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TablePinAdolfoTesting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jesusadolfo.TablePinAdolfoTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -297,10 +316,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TablePinAdolfoTesting/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jesusadolfo.TablePinAdolfoTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 			};
 			name = Release;
 		};
