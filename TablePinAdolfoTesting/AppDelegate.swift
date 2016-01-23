@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-        
-        
+                
 //        CHANGES THE BAR COLOR
         UINavigationBar.appearance().barTintColor = UIColor(red: 254.0/255.0, green: 250.0/255.0, blue: 1.0/255.0, alpha: 1.0)
 //          CHANGES THE NAVIGATION TEXT COLOR
@@ -33,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = UIColor(red: 254.0/255.0, green: 250.0/255.0, blue: 1.0/255.0, alpha: 1.0)
         //Changes the color on the icons and text in TAB BAR
         UITabBar.appearance().tintColor = UIColor(red: 59.0/255.0, green: 37.0/255.0, blue: 0.0/255.0, alpha: 1.0)
-
+        
         return true
     }
 

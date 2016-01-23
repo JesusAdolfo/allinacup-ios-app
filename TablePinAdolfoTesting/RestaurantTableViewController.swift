@@ -7,40 +7,80 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import SwiftyJSON
 
 class RestaurantTableViewController: UITableViewController {
-
-    @IBOutlet weak var Open: UIBarButtonItem!
-    //HIDES THE STATUS BAR
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true
-//    }
     
     
-    var foods:[Food] = [
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false),
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false),
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false),
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false),
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false),
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false),
-        Food(name: "Pizza", description: "This food is quite yummy indeed and that is why all the customers like it and you will like it as well", price: 15.000, loyaltyPoints: 100 , image: "barrafina.jpg", isLiked: false),
-        Food(name: "Moccha", description: "Chocolaty goodness using the best cocoa in the world like the ones from South America", price: 8.000, loyaltyPoints: 800, image: "cafedeadend.jpg", isLiked: false)
-    ]
-
+    let BASE_URL: String = "http://159.203.92.55:9000"
     
-    var foodThumbnailsx = ["barrafina.jpg", "bourkestreetbakery.jpg", "cafedeadend.jpg", "cafeloisl.jpg", "cafelore.jpg", "confessional.jpg", "donostia.jpg", "fiveleaves.jpg", "forkeerestaurant.jpg", "grahamavenuemeats.jpg", "haighschocolate.jpg", "homei.jpg", "palominoespresso.jpg", "petiteoyster.jpg", "posatelier.jpg", "royaloak.jpg", "teakha.jpg", "thaicafe.jpg", "traif.jpg"]
-
-
+    let PRODUCT_TYPES: String = "/api/products/getTypes"
+    let USER_INFO: String = "/api/users/me"
+    let PRODUCT_BY_TYPE: String = "/api/products/byType/"
+    let IMAGE_ROOT = "/api/media/image?path="
     
+    let userDefaults = NSUserDefaults.standardUserDefaults() // create userDefaults to load token
+    
+
+    var foods:[Food] = []
+    var user:[User] = []
+
+
+
+    ///This method is called when this view loads (Duh!)
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        var currentFoodType: String = ""
+        var currentFoodList: String = ""
+        
+        
+        //creating an empty cart when the app launches
+        var cart = (self.tabBarController as! CustomTabBarController).model
+
+        
+        //debug
+        
+        //this is how I get back the token from NSUserDefault
+        if let myToken = userDefaults.valueForKey("token"){
+            
+            
+            // calling method to get the user info
+            getUserInfo(myToken as! String)
+
+            // calling method to get the product type
+            func getFoodCategory(completionHandler: (NSDictionary?, NSError?) -> ()) {
+                getProductTypes(myToken as! String, completionHandler: completionHandler)
+            }
+            getFoodCategory() { responseObject, error in
+                // use responseObject and error here
+                
+                let foodTypesJSON = JSON(responseObject!)
+                //to get one single food category
+                currentFoodType = (foodTypesJSON["types"][self.tabBarController!.selectedIndex].stringValue) //gets the FOOD category according to which tab was selected
+                
+                print(currentFoodType)
+                
+                    func getFoodsByCategory(completionHandler: (NSDictionary?, NSError?) -> ()) {
+                        self.getProductsByType(myToken as! String, productType: currentFoodType, completionHandler: completionHandler)
+                    }
+                    
+                    getFoodsByCategory() { responseObject, error in
+                        // use responseObject and error here
+                        print("responseObject = \(responseObject); error = \(error)")
+                        
+                        return
+                    }
+
+                
+               return
+            }
+            
+        }
+        
+        
         
         //remove the title of the back button
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
@@ -60,6 +100,11 @@ class RestaurantTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         
         navigationController?.hidesBarsOnSwipe = true
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,80 +125,205 @@ class RestaurantTableViewController: UITableViewController {
     }
 
 
+    
+    
+    
+    
+    //GET THE USER INFO FROM THE SERVER
+    func getUserInfo(myToken: String){
+        
+        let requestToken = "Bearer " + myToken
+        
+        let headers = [
+            "Authorization": requestToken
+        ]
+        
+        let getUserInfoEndpoint: String = BASE_URL + USER_INFO
+    
+
+        
+        
+        Alamofire.request(.GET, getUserInfoEndpoint, headers: headers)
+            .responseJSON { response in
+                // handle JSON
+                guard response.result.error == nil else {
+                    // got an error in getting the data, need to handle it
+                    print("error on GET")
+                    print(response.result.error!)
+                    return
+                }
+                
+                if let value: AnyObject = response.result.value {
+                    // handle the results as JSON, without a bunch of nested if loops
+                    let auth = JSON(value)
+                    
+                    let id = auth["_id"].int
+                    
+                    let cart = (self.tabBarController as! CustomTabBarController).model
+                    cart.idUser = id!
+                    
+                    let address = auth["address"].stringValue
+                    let role = auth["role"].stringValue
+                    let lvl = auth["lvl"].int
+                    let lastName = auth["lastName"].stringValue
+                    let gender = auth["gender"].stringValue
+                    let loyaltyPoints = auth["loyaltyPoints"].double
+                    let firstName = auth["firstName"].stringValue
+                    let phoneNumber = auth["phoneNumber"].stringValue
+                    let email = auth["email"].stringValue
+                    
+                    let currentUser = User(_id: id!, address: address, role: role, lvl: lvl!, lastName: lastName, gender: gender, loyaltyPoints: loyaltyPoints!, firstName: firstName, phoneNumber: phoneNumber, email: email)
+                    
+                    self.user.removeAll()
+                    self.user.append(currentUser)
+                    
+                    dump(self.user)
+
+                    //auth
+                    
+
+                }
+        }//END ALAMOFIRE POST responseJSON
+    }
+    
+    
+    
+    
+    //GET THE PRODUCT TYPES FROM THE SERVER
+    func getProductTypes(myToken: String, completionHandler: (NSDictionary?, NSError?) -> ())  {
+        
+        let requestToken = "Bearer " + myToken
+        let headers = ["Authorization": requestToken]
+        let getProductTypesEndpoint: String = BASE_URL + PRODUCT_TYPES
+ 
+        
+        Alamofire.request(.GET, getProductTypesEndpoint, headers: headers)
+            .responseJSON{ response in
+                switch response.result {
+                case .Success(let value):
+                    completionHandler(value as? NSDictionary, nil)
+                case .Failure(let error):
+                    completionHandler(nil, error)
+                }
+        }//END ALAMOFIRE POST responseJSON
+        
+
+    }
+    
+    //GET THE PRODUCTS FROM THE SERVER GIVEN A CATEGORY
+    func getProductsByType(myToken: String, productType: String, completionHandler: (NSDictionary?, NSError?) -> ()){
+        
+        let requestToken = "Bearer " + myToken
+        let headers = ["Authorization": requestToken]
+        let getProductTypesEndpoint: String = BASE_URL + PRODUCT_BY_TYPE + productType
+        
+        Alamofire.request(.GET, getProductTypesEndpoint, headers: headers)
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    if let value = response.result.value {
+                        let foodListJSON = JSON(value)
+                        for (_, subJson) in foodListJSON {
+                            
+                            let id = subJson["_id"].stringValue
+                            let name = subJson["name"].stringValue
+                            let description = subJson["description"].stringValue
+                            let  price = subJson["price"].double
+                            let loyaltyPoints = subJson["loyaltyPoints"].int
+                            
+                            let loadedFood = Food(id: id, name: name, description: description, price: price!, loyaltyPoints: loyaltyPoints!, image: self.BASE_URL + self.IMAGE_ROOT + subJson["image"].stringValue, isLiked: true)
+                            
+                            
+                            self.foods.append(loadedFood)
+                            
+                            self.do_table_refresh()
+            
+                        }
+                    }
+
+                case .Failure(let error):
+                    print("there was an error")
+
+                    completionHandler(nil, error)
+                }
+        }//END ALAMOFIRE POST responseJSON
+    }
+    
+    func do_table_refresh()
+    {
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+            return
+        })
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MenuTableViewCell
         
+        
+        //disable cell highlighting
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         // Configure the cell...
         cell.nameLabel.text = foods[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(named: foods[indexPath.row].image)
+        
+        //cell.thumbnailImageView.image = UIImage(named: foods[indexPath.row].image)
+        
+        if let myToken = userDefaults.valueForKey("token"){
+            let requestToken = "Bearer " + (myToken as! String)
+            let headers = ["Authorization": requestToken, "Content-Type": "image/jpg"]
+            
+            let imageEndPoint = foods[indexPath.row].image
+            
+            
+            //MATCHING THE SERVER RESPONSE TO THE RESPONSE ACCEPTED BY ALAMOFIREIMAGE
+            Request.addAcceptableImageContentTypes(["image/jpg"])
+            
+            Alamofire.request(.GET, imageEndPoint, headers: headers)
+                .responseImage { response in
+                    
+                    if let image = response.result.value {
+                        cell.thumbnailImageView.image = image
+                    }
+            }//ENDS ALAMOFIREIMAGE REQUEST
+            
+            
+        }
+
+        
         cell.descriptionLabel.text = foods[indexPath.row].description
         cell.priceLabel.text = String(foods[indexPath.row].price)
+        cell.loyaltyLabel.text = "LP: " + String(foods[indexPath.row].loyaltyPoints)
         
-        if foods[indexPath.row].isLiked {
-            cell.accessoryType = .Checkmark
-        } else {
-            cell.accessoryType = .None
+        
+        if (foods[indexPath.row].qtity <= 0){
+            cell.removeButton.hidden = true
+            cell.qtyLabel.hidden = true
+            cell.loyaltyPointsLabel.hidden = true
+            cell.totalPriceLabel.hidden = true
+        }else{
+            cell.removeButton.hidden = false
+            cell.qtyLabel.hidden = false
+            cell.loyaltyPointsLabel.hidden = false
+            cell.totalPriceLabel.hidden = false
         }
+        
+        cell.qtyLabel.text = "Qty: " + String(foods[indexPath.row].qtity)
+        cell.loyaltyPointsLabel.text = "LP: " + String(foods[indexPath.row].totalLP)
+        cell.totalPriceLabel.text = "Total: " +  String(foods[indexPath.row].totalPrice) + " ₩"
+        
+        cell.addButton.tag = indexPath.row
+        cell.removeButton.tag = indexPath.row
+        
+
         
         return cell
     }
+
     
-    
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        //Create an option menu as action sheet
-//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do", preferredStyle: .ActionSheet)
-//        
-//        // Add actions to the menu
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//        
-//        let callActionHandler = { (action:UIAlertAction)-> Void in
-//            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, call feature is not available yet. Please, try later.", preferredStyle: .Alert)
-//        alertMessage.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-//            self.presentViewController(alertMessage, animated: true, completion: nil)}
-//        
-//        
-//        let callAction = UIAlertAction(title: "Call" + "123-000-13341", style: UIAlertActionStyle.Default , handler: callActionHandler)
-//        
-//        var isVisitedTitle = ""
-//        if foodsLiked[indexPath.row] {
-//            isVisitedTitle = "I don't like this"
-//        }else {
-//            isVisitedTitle = "I like this food"
-//        }
-//        
-//        let isVisitedAction = UIAlertAction(title: isVisitedTitle, style: .Default, handler: {
-//            (action: UIAlertAction!) -> Void in
-//            
-//            let cell = tableView.cellForRowAtIndexPath(indexPath)
-//            
-//            if self.foodsLiked[indexPath.row]{
-//                cell?.accessoryType = .None
-//                self.foodsLiked[indexPath.row] = false
-//            }else{
-//                cell?.accessoryType = .Checkmark
-//                self.foodsLiked[indexPath.row] = true
-//            }
-//            
-//            
-//        })
-//        
-//        
-//        //adding the actions to the menu
-//        optionMenu.addAction(isVisitedAction)
-//        optionMenu.addAction(callAction)
-//        optionMenu.addAction(cancelAction)
-//        
-//        
-//        //display the menu
-//        self.presentViewController(optionMenu, animated: true, completion: nil)
-//        
-//        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-//    }
-    
-    
+    //SHARE AND DELETE FROM THE TABLE LIST
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         
         //social sharing button
@@ -187,13 +357,71 @@ class RestaurantTableViewController: UITableViewController {
         return [deleteAction, shareAction]
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showFoodDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow{
-                let destinationController = segue.destinationViewController as! FoodDetailViewController
-                destinationController.food = foods[indexPath.row]
+    
+    
+    
+    @IBAction func addButtonClicked(sender: AnyObject) {
+        
+        let buttonRow = sender.tag
+    
+        
+        foods[buttonRow].qtity++
+        
+        foods[buttonRow].totalLP = foods[buttonRow].loyaltyPoints * foods[buttonRow].qtity
+        foods[buttonRow].totalPrice = foods[buttonRow].price * Double(foods[buttonRow].qtity)
+        
+        let cart = (self.tabBarController as! CustomTabBarController).model
+        
+        cart.totalLoyaltyPoints = cart.totalLoyaltyPoints + Double(foods[buttonRow].loyaltyPoints)
+        cart.totalPrice = cart.totalPrice + foods[buttonRow].price
+        
+        let id = foods[buttonRow].id
+        let qty = foods[buttonRow].qtity
+        let name = foods[buttonRow].name
+        
+        if let _ = cart.foodId_QtityDict[id] {
+            print("Key exists")
+            cart.foodId_QtityDict.updateValue(qty, forKey: id)
+            
+            
+            //adds 1 to an item existing in the cart
+            for object in cart.myCart{
+                if (object.id == id){
+                    object.cant = qty
+                }
             }
+        }else{
+            
+            //create new object because this food is not in the cart
+            cart.myCart.append(FoodItem(id: id, name: name, cant: 1))
+            
+            print("Key does not exist")
+            cart.foodId_QtityDict.updateValue(1, forKey: id)
+            cart.productNamesDict.updateValue(name, forKey: id)
         }
+
+        self.do_table_refresh()
+        
+    }
+    
+    @IBAction func removeButtonClicked(sender: AnyObject) {
+        let buttonRow = sender.tag
+        
+        foods[buttonRow].qtity--
+        
+        print(foods[buttonRow].qtity)
+        
+        foods[buttonRow].totalLP = foods[buttonRow].loyaltyPoints * foods[buttonRow].qtity
+        foods[buttonRow].totalPrice = foods[buttonRow].price * Double(foods[buttonRow].qtity)
+        
+        let cart = (self.tabBarController as! CustomTabBarController).model
+        
+        cart.totalLoyaltyPoints = cart.totalLoyaltyPoints - Double(foods[buttonRow].loyaltyPoints)
+        cart.totalPrice = cart.totalPrice - foods[buttonRow].price
+        
+        self.do_table_refresh()
+        
+
     }
 
 

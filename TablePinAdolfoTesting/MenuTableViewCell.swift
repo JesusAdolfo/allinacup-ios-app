@@ -14,9 +14,17 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var thumbnailImageView: UIImageView!
+    @IBOutlet var loyaltyLabel: UILabel!
+    
+    @IBOutlet var qtyLabel: UILabel!
+    @IBOutlet var loyaltyPointsLabel: UILabel!
+    @IBOutlet var totalPriceLabel: UILabel!
+    
+    
+    @IBOutlet var addButton: UIButton!
+    @IBOutlet var removeButton: UIButton!
 
     override func awakeFromNib() {
-        super.awakeFromNib()
         // Initialization code
     }
 
