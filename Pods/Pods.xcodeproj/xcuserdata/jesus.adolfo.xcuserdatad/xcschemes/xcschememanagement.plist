@@ -14,7 +14,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-TablePinAdolfoTesting.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RAMAnimatedTabBarController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>158A42EF36C21282016DA698A4C0D477</key>
+		<key>243C66CE9F1CC708A5C14C36B7A760A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>276A2D49BA4B8453324C00D3C0E2CDE3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D212FFC5D94F35666D227F0070CCF194</key>
+		<key>BB4CADA6532CDCC288F477D11641087D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -9,14 +9,91 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TablePinAdolfoTesting/LoginVC.swift"
-            timestampString = "474064003.232039"
+            filePath = "TablePinAdolfoTesting/MenuTableViewCell.swift"
+            timestampString = "475891627.774866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "normalLogin(_:)"
-            landmarkType = "5">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "MenuTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.MenuTableViewCell.addButton.getter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/MenuTableViewCell.swift"
+                  timestampString = "475891627.936054"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.MenuTableViewCell.addButton.setter : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/MenuTableViewCell.swift"
+                  timestampString = "475891627.941282"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.MenuTableViewCell.addButton.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/MenuTableViewCell.swift"
+                  timestampString = "475891627.941902"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.MenuTableViewCell.init (TablePinAdolfoTesting.MenuTableViewCell.Type)(style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; TablePinAdolfoTesting.MenuTableViewCell"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/MenuTableViewCell.swift"
+                  timestampString = "475891627.942107"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "253">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.MenuTableViewCell.init (TablePinAdolfoTesting.MenuTableViewCell.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TablePinAdolfoTesting.MenuTableViewCell&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/MenuTableViewCell.swift"
+                  timestampString = "475891627.942354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "215">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

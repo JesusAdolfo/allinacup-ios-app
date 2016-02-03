@@ -13,6 +13,13 @@ import SwiftyJSON
 class LoginVC: UIViewController {
 
     
+    @IBOutlet var logoTextLabel: UILabel!
+    
+    @IBOutlet var logInButton: UIButton!
+    @IBOutlet var facebookLogInButton: UIButton!
+    
+    @IBOutlet var forgotLabel: UILabel!
+    @IBOutlet var registerLabel: UILabel!
     
     @IBOutlet weak var txtLoginEmail: UITextField!
     @IBOutlet weak var txtLoginPassword: UITextField!
@@ -24,6 +31,31 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        txtLoginEmail.center.x  -= view.bounds.width
+        txtLoginPassword.center.x -= view.bounds.width
+        logoTextLabel.center.x -= view.bounds.width
+        facebookLogInButton.center.x -= view.bounds.width
+        logInButton.center.x -= view.bounds.width
+        forgotLabel.center.x -= view.bounds.width
+        registerLabel.center.x -= view.bounds.width
+        
+        
+        UIView.animateWithDuration(0.5, delay: 0.4,
+            options: [.CurveEaseInOut],
+            animations: {
+            self.txtLoginEmail.center.x += self.view.bounds.width
+            self.txtLoginPassword.center.x += self.view.bounds.width
+            self.logoTextLabel.center.x += self.view.bounds.width
+            self.logInButton.center.x += self.view.bounds.width
+            self.facebookLogInButton.center.x += self.view.bounds.width
+            self.forgotLabel.center.x += self.view.bounds.width
+            self.registerLabel.center.x += self.view.bounds.width
+            
+            
+        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

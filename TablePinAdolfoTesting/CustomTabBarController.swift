@@ -21,9 +21,13 @@ class CartItem {
     
     var myCart:[FoodItem] = []
     
+    var itemCount = 0
+    
 }
 
 class CustomTabBarController: UITabBarController {
+    
+     var secondItemImageView: UIImageView!
     
     // Instantiate the one copy of the model data that will be accessed
     // by all of the tabs.
@@ -32,6 +36,27 @@ class CustomTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func animateCart(){
+        
+        let secondItemView = self.tabBar.subviews[4]
+        
+        self.secondItemImageView = secondItemView.subviews.first as! UIImageView
+        self.secondItemImageView.contentMode = .Center
+
+        
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .CurveEaseInOut, animations: { () -> Void in
+            
+            self.secondItemImageView.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            self.secondItemImageView.tintColor = UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
+            }, completion: { (t) -> Void in
+                self.secondItemImageView.tintColor = UIColor.grayColor()
+                self.secondItemImageView.transform = CGAffineTransformMakeScale(1.0, 1.0)
+        })
+        
     }
 }

@@ -40,9 +40,6 @@ class RestaurantTableViewController: UITableViewController {
         //creating an empty cart when the app launches
         var cart = (self.tabBarController as! CustomTabBarController).model
 
-        
-        //debug
-        
         //this is how I get back the token from NSUserDefault
         if let myToken = userDefaults.valueForKey("token"){
             
@@ -60,8 +57,6 @@ class RestaurantTableViewController: UITableViewController {
                 let foodTypesJSON = JSON(responseObject!)
                 //to get one single food category
                 currentFoodType = (foodTypesJSON["types"][self.tabBarController!.selectedIndex].stringValue) //gets the FOOD category according to which tab was selected
-                
-                print(currentFoodType)
                 
                     func getFoodsByCategory(completionHandler: (NSDictionary?, NSError?) -> ()) {
                         self.getProductsByType(myToken as! String, productType: currentFoodType, completionHandler: completionHandler)
@@ -88,23 +83,15 @@ class RestaurantTableViewController: UITableViewController {
         //Self sizing cells (useful for lengthy texts and such
             tableView.estimatedRowHeight = 36.0
             tableView.rowHeight = UITableViewAutomaticDimension
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()   
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.hidesBarsOnSwipe = true
         
         
-        
-        
-        
+        //Refresshes the table everytime a tab appears
+        self.do_table_refresh()
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,7 +100,6 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -176,9 +162,6 @@ class RestaurantTableViewController: UITableViewController {
                     
                     self.user.removeAll()
                     self.user.append(currentUser)
-                    
-                    dump(self.user)
-
                     //auth
                     
 
@@ -232,8 +215,6 @@ class RestaurantTableViewController: UITableViewController {
                             let loyaltyPoints = subJson["loyaltyPoints"].int
                             
                             let loadedFood = Food(id: id, name: name, description: description, price: price!, loyaltyPoints: loyaltyPoints!, image: self.BASE_URL + self.IMAGE_ROOT + subJson["image"].stringValue, isLiked: true)
-                            
-                            
                             self.foods.append(loadedFood)
                             
                             self.do_table_refresh()
@@ -262,6 +243,7 @@ class RestaurantTableViewController: UITableViewController {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MenuTableViewCell
         
+        cell.addButton.tag = indexPath.row
         
         //disable cell highlighting
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -269,23 +251,34 @@ class RestaurantTableViewController: UITableViewController {
         // Configure the cell...
         cell.nameLabel.text = foods[indexPath.row].name
         
-        //cell.thumbnailImageView.image = UIImage(named: foods[indexPath.row].image)
         
         if let myToken = userDefaults.valueForKey("token"){
             let requestToken = "Bearer " + (myToken as! String)
             let headers = ["Authorization": requestToken, "Content-Type": "image/jpg"]
-            
             let imageEndPoint = foods[indexPath.row].image
             
+            let imageId = "image_" + String(foods[indexPath.row].id)
             
             //MATCHING THE SERVER RESPONSE TO THE RESPONSE ACCEPTED BY ALAMOFIREIMAGE
             Request.addAcceptableImageContentTypes(["image/jpg"])
+            
+            
+            
+            let imageCache = AutoPurgingImageCache()
+            
+            let URLRequest = NSURLRequest(URL: NSURL(string: imageEndPoint)!)
             
             Alamofire.request(.GET, imageEndPoint, headers: headers)
                 .responseImage { response in
                     
                     if let image = response.result.value {
                         cell.thumbnailImageView.image = image
+                        imageCache.addImage(
+                            image,
+                            forRequest: URLRequest,
+                            withAdditionalIdentifier: imageId
+                        )
+                        
                     }
             }//ENDS ALAMOFIREIMAGE REQUEST
             
@@ -294,30 +287,13 @@ class RestaurantTableViewController: UITableViewController {
 
         
         cell.descriptionLabel.text = foods[indexPath.row].description
-        cell.priceLabel.text = String(foods[indexPath.row].price)
+        
+        let priceValue: Double = foods[indexPath.row].price
+        let unit: String = " ₩"
+        let priceString = String.localizedStringWithFormat("%@%.0f ", priceValue, unit)
+        
+        cell.priceLabel.text = priceString
         cell.loyaltyLabel.text = "LP: " + String(foods[indexPath.row].loyaltyPoints)
-        
-        
-        if (foods[indexPath.row].qtity <= 0){
-            cell.removeButton.hidden = true
-            cell.qtyLabel.hidden = true
-            cell.loyaltyPointsLabel.hidden = true
-            cell.totalPriceLabel.hidden = true
-        }else{
-            cell.removeButton.hidden = false
-            cell.qtyLabel.hidden = false
-            cell.loyaltyPointsLabel.hidden = false
-            cell.totalPriceLabel.hidden = false
-        }
-        
-        cell.qtyLabel.text = "Qty: " + String(foods[indexPath.row].qtity)
-        cell.loyaltyPointsLabel.text = "LP: " + String(foods[indexPath.row].totalLP)
-        cell.totalPriceLabel.text = "Total: " +  String(foods[indexPath.row].totalPrice) + " ₩"
-        
-        cell.addButton.tag = indexPath.row
-        cell.removeButton.tag = indexPath.row
-        
-
         
         return cell
     }
@@ -359,11 +335,37 @@ class RestaurantTableViewController: UITableViewController {
     
     
     
-    
+    //FIXME: animation is funky
     @IBAction func addButtonClicked(sender: AnyObject) {
         
+        let cartx = (self.tabBarController as! CustomTabBarController)
+        cartx.animateCart()
+        //Animation the button when clicked
+        let button = sender as! UIButton
+        
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1 , options: .CurveEaseInOut, animations: { () -> Void in
+            
+            
+            
+            button.tintColor = UIColor.grayColor()
+            
+            
+            //TODO: I have to do this
+            
+            //set background to brown
+            //button.backgroundColor = UIColor(red: 62/255, green: 39/255, blue: 35/255, alpha: 1)
+            //set + sign to gray
+            //button.setBackgroundImage(a, forState: <#T##UIControlState#>)
+            
+            button.transform = CGAffineTransformMakeScale(1.2, 1.2)
+            }, completion: { (t) -> Void in
+                button.transform = CGAffineTransformMakeScale(1.0, 1.0)
+              //  button.backgroundColor = UIColor(red: 255.0/255.0, green: 204.0/255.0, blue: 35.0/255.0, alpha: 1.0)
+           })
+        
+        //end of the code regarding the animation
+        
         let buttonRow = sender.tag
-    
         
         foods[buttonRow].qtity++
         
@@ -372,56 +374,45 @@ class RestaurantTableViewController: UITableViewController {
         
         let cart = (self.tabBarController as! CustomTabBarController).model
         
+        cart.itemCount++
+        
+        //adds to the total of the cart
         cart.totalLoyaltyPoints = cart.totalLoyaltyPoints + Double(foods[buttonRow].loyaltyPoints)
         cart.totalPrice = cart.totalPrice + foods[buttonRow].price
         
-        let id = foods[buttonRow].id
-        let qty = foods[buttonRow].qtity
-        let name = foods[buttonRow].name
         
+        //fields to create a new item in the cart.
+        let id = foods[buttonRow].id
+        let name = foods[buttonRow].name
+        let description = foods[buttonRow].description
+        let price = foods[buttonRow].price
+        let lp = foods[buttonRow].loyaltyPoints
+        let image = foods[buttonRow].image
+
+        let qty = foods[buttonRow].qtity
         if let _ = cart.foodId_QtityDict[id] {
-            print("Key exists")
             cart.foodId_QtityDict.updateValue(qty, forKey: id)
             
-            
+            //adds to the sub-total of the current item
             //adds 1 to an item existing in the cart
             for object in cart.myCart{
                 if (object.id == id){
-                    object.cant = qty
+                    object.cant += 1
+                    object.subTotalLP += lp
+                    object.subTotalPrice += price
                 }
             }
+            print("NOO!")
         }else{
-            
+            print("cayo aqui")
             //create new object because this food is not in the cart
-            cart.myCart.append(FoodItem(id: id, name: name, cant: 1))
+            cart.myCart.append(FoodItem(id: id, name: name, cant: 1, description: description, price: price, lp: lp, image: image, subTotalLP: lp, subTotalPrice: price ))
             
-            print("Key does not exist")
             cart.foodId_QtityDict.updateValue(1, forKey: id)
             cart.productNamesDict.updateValue(name, forKey: id)
         }
-
         self.do_table_refresh()
         
-    }
-    
-    @IBAction func removeButtonClicked(sender: AnyObject) {
-        let buttonRow = sender.tag
-        
-        foods[buttonRow].qtity--
-        
-        print(foods[buttonRow].qtity)
-        
-        foods[buttonRow].totalLP = foods[buttonRow].loyaltyPoints * foods[buttonRow].qtity
-        foods[buttonRow].totalPrice = foods[buttonRow].price * Double(foods[buttonRow].qtity)
-        
-        let cart = (self.tabBarController as! CustomTabBarController).model
-        
-        cart.totalLoyaltyPoints = cart.totalLoyaltyPoints - Double(foods[buttonRow].loyaltyPoints)
-        cart.totalPrice = cart.totalPrice - foods[buttonRow].price
-        
-        self.do_table_refresh()
-        
-
     }
 
 
