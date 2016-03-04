@@ -86,12 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-TablePinAdolfoTesting/Alamofire.framework"
   install_framework "Pods-TablePinAdolfoTesting/AlamofireImage.framework"
-  install_framework "Pods-TablePinAdolfoTesting/RAMAnimatedTabBarController.framework"
+  install_framework "Pods-TablePinAdolfoTesting/SocketIOClientSwift.framework"
   install_framework "Pods-TablePinAdolfoTesting/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-TablePinAdolfoTesting/Alamofire.framework"
   install_framework "Pods-TablePinAdolfoTesting/AlamofireImage.framework"
-  install_framework "Pods-TablePinAdolfoTesting/RAMAnimatedTabBarController.framework"
+  install_framework "Pods-TablePinAdolfoTesting/SocketIOClientSwift.framework"
   install_framework "Pods-TablePinAdolfoTesting/SwiftyJSON.framework"
 fi

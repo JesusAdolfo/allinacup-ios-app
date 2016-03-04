@@ -19,7 +19,7 @@ class LoginVC: UIViewController {
     @IBOutlet var facebookLogInButton: UIButton!
     
     @IBOutlet var forgotLabel: UILabel!
-    @IBOutlet var registerLabel: UILabel!
+    @IBOutlet var registerButton: UIButton!
     
     @IBOutlet weak var txtLoginEmail: UITextField!
     @IBOutlet weak var txtLoginPassword: UITextField!
@@ -29,18 +29,20 @@ class LoginVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.removeObjectForKey("token")
+        userDefaults.synchronize()
         txtLoginEmail.center.x  -= view.bounds.width
         txtLoginPassword.center.x -= view.bounds.width
         logoTextLabel.center.x -= view.bounds.width
         facebookLogInButton.center.x -= view.bounds.width
         logInButton.center.x -= view.bounds.width
         forgotLabel.center.x -= view.bounds.width
-        registerLabel.center.x -= view.bounds.width
+        registerButton.center.x -= view.bounds.width
         
         
         UIView.animateWithDuration(0.5, delay: 0.4,
@@ -52,7 +54,7 @@ class LoginVC: UIViewController {
             self.logInButton.center.x += self.view.bounds.width
             self.facebookLogInButton.center.x += self.view.bounds.width
             self.forgotLabel.center.x += self.view.bounds.width
-            self.registerLabel.center.x += self.view.bounds.width
+            self.registerButton.center.x += self.view.bounds.width
             
             
         }, completion: nil)
@@ -91,8 +93,8 @@ class LoginVC: UIViewController {
             let loginEndpoint: String = "http://159.203.92.55:9000/auth/local/app"
             
             let parameters = [
-                "email": "jesus.adolfo@gonkar.com",
-                "password": "123456"
+                "email": email,
+                "password": password
 
             ]
             

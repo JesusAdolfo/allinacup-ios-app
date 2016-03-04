@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B04CFDFE1C82259600819886 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFDFD1C82259600819886 /* RegisterViewController.swift */; };
+		B04CFE001C87AA2300819886 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFDFF1C87AA2300819886 /* SocketIOManager.swift */; };
+		B04CFE071C880AF900819886 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFE021C880AF900819886 /* BaseCell.swift */; };
+		B04CFE081C880AF900819886 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFE031C880AF900819886 /* ChatCell.swift */; };
+		B04CFE0A1C880AF900819886 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFE051C880AF900819886 /* UserCell.swift */; };
+		B04CFE0B1C880AF900819886 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04CFE061C880AF900819886 /* UserCell.xib */; };
+		B04CFE0D1C8812A000819886 /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04CFE0C1C8812A000819886 /* ChatCell.xib */; };
+		B052D8F21C7C0A3100BD607F /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052D8F11C7C0A3100BD607F /* Levels.swift */; };
+		B052D8F61C7D63F800BD607F /* LevelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052D8F51C7D63F800BD607F /* LevelTableViewCell.swift */; };
+		B052D8F81C7E8DAF00BD607F /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052D8F71C7E8DAE00BD607F /* Functions.swift */; };
 		B057868E1C211407000BB5B4 /* beverages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B057868C1C211407000BB5B4 /* beverages.storyboard */; };
 		B05FA61A1C3DA8D600EC0C17 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05FA6191C3DA8D600EC0C17 /* LoginVC.swift */; };
 		B06A3A521C174A7F00AD6211 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06A3A511C174A7F00AD6211 /* AppDelegate.swift */; };
@@ -18,6 +28,9 @@
 		B081F4371C1B157900F6CC84 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B081F4361C1B157900F6CC84 /* Food.swift */; };
 		B093E5701C1F6E1B00B70B13 /* cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B093E56E1C1F6E1B00B70B13 /* cart.storyboard */; };
 		B093E5721C1F6EDA00B70B13 /* desserts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B093E5711C1F6EDA00B70B13 /* desserts.storyboard */; };
+		B0E7AFEE1C62577100BBCFF9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E7AFED1C62577100BBCFF9 /* SWRevealViewController.m */; };
+		B0E7AFF01C65709A00BBCFF9 /* LoyaltyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E7AFEF1C65709A00BBCFF9 /* LoyaltyViewController.swift */; };
+		B0E7AFF41C681FFB00BBCFF9 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E7AFF31C681FFB00BBCFF9 /* ChatViewController.swift */; };
 		B0EB5FFE1C4EED0B0057E462 /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EB5FFD1C4EED0B0057E462 /* FoodItem.swift */; };
 		B0F85DAB1C4F3B1C0086FB6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F85DAA1C4F3B1C0086FB6A /* User.swift */; };
 		B0F85DAF1C5049990086FB6A /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F85DAE1C5049990086FB6A /* CartTableViewController.swift */; };
@@ -41,6 +54,16 @@
 /* Begin PBXFileReference section */
 		184B7B594E8482D51E8B380A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA9A6A58C922B4B83601194 /* Pods-TablePinAdolfoTesting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablePinAdolfoTesting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TablePinAdolfoTesting/Pods-TablePinAdolfoTesting.debug.xcconfig"; sourceTree = "<group>"; };
+		B04CFDFD1C82259600819886 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B04CFDFF1C87AA2300819886 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		B04CFE021C880AF900819886 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		B04CFE031C880AF900819886 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		B04CFE051C880AF900819886 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		B04CFE061C880AF900819886 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		B04CFE0C1C8812A000819886 /* ChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
+		B052D8F11C7C0A3100BD607F /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		B052D8F51C7D63F800BD607F /* LevelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelTableViewCell.swift; sourceTree = "<group>"; };
+		B052D8F71C7E8DAE00BD607F /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		B057868D1C211407000BB5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/beverages.storyboard; sourceTree = "<group>"; };
 		B05FA6191C3DA8D600EC0C17 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B06A3A4E1C174A7F00AD6211 /* TablePinAdolfoTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TablePinAdolfoTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +78,11 @@
 		B081F4361C1B157900F6CC84 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B093E56F1C1F6E1B00B70B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/cart.storyboard; sourceTree = "<group>"; };
 		B093E5711C1F6EDA00B70B13 /* desserts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = desserts.storyboard; sourceTree = "<group>"; };
+		B0E7AFEB1C62577000BBCFF9 /* TablePinAdolfoTesting-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TablePinAdolfoTesting-Bridging-Header.h"; sourceTree = "<group>"; };
+		B0E7AFEC1C62577100BBCFF9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		B0E7AFED1C62577100BBCFF9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		B0E7AFEF1C65709A00BBCFF9 /* LoyaltyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoyaltyViewController.swift; sourceTree = "<group>"; };
+		B0E7AFF31C681FFB00BBCFF9 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B0EB5FFD1C4EED0B0057E462 /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		B0F85DAA1C4F3B1C0086FB6A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B0F85DAE1C5049990086FB6A /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +114,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B04CFE011C88090B00819886 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B04CFE0C1C8812A000819886 /* ChatCell.xib */,
+				B04CFE021C880AF900819886 /* BaseCell.swift */,
+				B04CFE031C880AF900819886 /* ChatCell.swift */,
+				B04CFE051C880AF900819886 /* UserCell.swift */,
+				B04CFE061C880AF900819886 /* UserCell.xib */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		B06A3A451C174A7E00AD6211 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +148,8 @@
 		B06A3A501C174A7F00AD6211 /* TablePinAdolfoTesting */ = {
 			isa = PBXGroup;
 			children = (
+				B04CFE011C88090B00819886 /* Custom Cells */,
+				B0E7AFEA1C62570A00BBCFF9 /* SWRevealViewController */,
 				B06A3A511C174A7F00AD6211 /* AppDelegate.swift */,
 				B06A3A551C174A7F00AD6211 /* Main.storyboard */,
 				B057868C1C211407000BB5B4 /* beverages.storyboard */,
@@ -124,8 +166,25 @@
 				B0F85DAA1C4F3B1C0086FB6A /* User.swift */,
 				B0F85DAE1C5049990086FB6A /* CartTableViewController.swift */,
 				B0F85DB01C51BEF80086FB6A /* CustomTabBarController.swift */,
+				B0E7AFEF1C65709A00BBCFF9 /* LoyaltyViewController.swift */,
+				B0E7AFF31C681FFB00BBCFF9 /* ChatViewController.swift */,
+				B052D8F11C7C0A3100BD607F /* Levels.swift */,
+				B052D8F51C7D63F800BD607F /* LevelTableViewCell.swift */,
+				B052D8F71C7E8DAE00BD607F /* Functions.swift */,
+				B04CFDFF1C87AA2300819886 /* SocketIOManager.swift */,
 			);
 			path = TablePinAdolfoTesting;
+			sourceTree = "<group>";
+		};
+		B0E7AFEA1C62570A00BBCFF9 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B0E7AFEC1C62577100BBCFF9 /* SWRevealViewController.h */,
+				B0E7AFED1C62577100BBCFF9 /* SWRevealViewController.m */,
+				B0E7AFEB1C62577000BBCFF9 /* TablePinAdolfoTesting-Bridging-Header.h */,
+				B04CFDFD1C82259600819886 /* RegisterViewController.swift */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 		B5AC4441DA142F8CE451D30D /* Frameworks */ = {
@@ -209,7 +268,9 @@
 				B093E5701C1F6E1B00B70B13 /* cart.storyboard in Resources */,
 				B093E5721C1F6EDA00B70B13 /* desserts.storyboard in Resources */,
 				B06A3A5C1C174A7F00AD6211 /* LaunchScreen.storyboard in Resources */,
+				B04CFE0B1C880AF900819886 /* UserCell.xib in Resources */,
 				B057868E1C211407000BB5B4 /* beverages.storyboard in Resources */,
+				B04CFE0D1C8812A000819886 /* ChatCell.xib in Resources */,
 				B06A3A591C174A7F00AD6211 /* Assets.xcassets in Resources */,
 				B06A3A571C174A7F00AD6211 /* Main.storyboard in Resources */,
 			);
@@ -273,12 +334,23 @@
 				B06A3A641C174BB000AD6211 /* RestaurantTableViewController.swift in Sources */,
 				B0F85DAF1C5049990086FB6A /* CartTableViewController.swift in Sources */,
 				B05FA61A1C3DA8D600EC0C17 /* LoginVC.swift in Sources */,
+				B04CFE081C880AF900819886 /* ChatCell.swift in Sources */,
 				B06C60C31C1CD03000944137 /* MenuTableViewCell.swift in Sources */,
+				B04CFE071C880AF900819886 /* BaseCell.swift in Sources */,
+				B052D8F21C7C0A3100BD607F /* Levels.swift in Sources */,
 				B081F4371C1B157900F6CC84 /* Food.swift in Sources */,
+				B04CFE0A1C880AF900819886 /* UserCell.swift in Sources */,
 				B0EB5FFE1C4EED0B0057E462 /* FoodItem.swift in Sources */,
 				B06A3A521C174A7F00AD6211 /* AppDelegate.swift in Sources */,
+				B04CFE001C87AA2300819886 /* SocketIOManager.swift in Sources */,
+				B052D8F81C7E8DAF00BD607F /* Functions.swift in Sources */,
+				B0E7AFF01C65709A00BBCFF9 /* LoyaltyViewController.swift in Sources */,
+				B0E7AFEE1C62577100BBCFF9 /* SWRevealViewController.m in Sources */,
+				B04CFDFE1C82259600819886 /* RegisterViewController.swift in Sources */,
+				B052D8F61C7D63F800BD607F /* LevelTableViewCell.swift in Sources */,
 				B0F85DAB1C4F3B1C0086FB6A /* User.swift in Sources */,
 				B0F85DB11C51BEF80086FB6A /* CustomTabBarController.swift in Sources */,
+				B0E7AFF41C681FFB00BBCFF9 /* ChatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +489,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jesusadolfo.TablePinAdolfoTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "TablePinAdolfoTesting/TablePinAdolfoTesting-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -437,6 +510,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.jesusadolfo.TablePinAdolfoTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "TablePinAdolfoTesting/TablePinAdolfoTesting-Bridging-Header.h";
 			};
 			name = Release;
 		};

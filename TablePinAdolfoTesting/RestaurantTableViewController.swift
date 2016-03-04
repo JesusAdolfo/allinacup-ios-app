@@ -14,6 +14,8 @@ import SwiftyJSON
 class RestaurantTableViewController: UITableViewController {
     
     
+    @IBOutlet var menuButton: UIBarButtonItem!
+    
     let BASE_URL: String = "http://159.203.92.55:9000"
     
     let PRODUCT_TYPES: String = "/api/products/getTypes"
@@ -32,6 +34,13 @@ class RestaurantTableViewController: UITableViewController {
     ///This method is called when this view loads (Duh!)
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     
         var currentFoodType: String = ""
         var currentFoodList: String = ""
@@ -110,9 +119,6 @@ class RestaurantTableViewController: UITableViewController {
         return foods.count
     }
 
-
-    
-    
     
     
     //GET THE USER INFO FROM THE SERVER
@@ -402,9 +408,7 @@ class RestaurantTableViewController: UITableViewController {
                     object.subTotalPrice += price
                 }
             }
-            print("NOO!")
         }else{
-            print("cayo aqui")
             //create new object because this food is not in the cart
             cart.myCart.append(FoodItem(id: id, name: name, cant: 1, description: description, price: price, lp: lp, image: image, subTotalLP: lp, subTotalPrice: price ))
             

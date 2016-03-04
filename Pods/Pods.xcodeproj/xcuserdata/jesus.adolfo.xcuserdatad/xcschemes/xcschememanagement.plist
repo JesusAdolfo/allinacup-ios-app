@@ -19,7 +19,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>RAMAnimatedTabBarController.xcscheme</key>
+		<key>Socket.IO-Client-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,12 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>243C66CE9F1CC708A5C14C36B7A760A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>276A2D49BA4B8453324C00D3C0E2CDE3</key>
+		<key>307396A2B293E9CD779F545044B67CCA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A011AFB2D72E899C3B198F681CAA8813</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A1BF58736B6CCECB5DB30E2108366143</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB4CADA6532CDCC288F477D11641087D</key>
+		<key>E008D77FDC5210A1EABE82EAC093EFFE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -29,6 +29,7 @@ class CartTableViewController: UITableViewController {
     @IBOutlet var totalLoyaltyLabel: UILabel!
     @IBOutlet var totalPriceLabel: UILabel!
     
+    @IBOutlet var menuButton: UIBarButtonItem!
     
     let BASE_URL: String = "http://159.203.92.55:9000"
     let ORDER_URL: String = "/api/client-requests"
@@ -39,6 +40,11 @@ class CartTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,8 +66,6 @@ class CartTableViewController: UITableViewController {
             switchToDataTab()
         }else{
             processOrderButton.hidden = false
-           
-            
             displayCartPriceAndLoyaltyPoints()
         }
 
@@ -253,10 +257,18 @@ class CartTableViewController: UITableViewController {
                         if order == ""{
                             let message = "There was an error while processing the order. \n Please, try later!"
                             self.alert("Error" , customMessage: message)
+                        }else{
+                            let message = "Your order number is #" + order
+                            self.alert("Order successful" , customMessage: message)
+                            
+                            let cart = (self.tabBarController as! CustomTabBarController).model
+                            cart.myCart.removeAll()
+                            cart.totalPrice = 0
+                            cart.totalLoyaltyPoints = 0
+                            cart.itemCount = 0
+ 
                         }
                         
-                        let message = "Your order number is #" + order
-                        self.alert("Order successful" , customMessage: message)
                         
                     case .Failure(let error):
                         print(error)
@@ -341,7 +353,6 @@ class CartTableViewController: UITableViewController {
                     tableView.reloadData()
                     print("this is my cart after removing an item")
                     dump(cart.myCart)
-                    //switchToDataTab()
                 }
             }
             count++
