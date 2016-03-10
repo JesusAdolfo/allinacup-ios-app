@@ -30,6 +30,7 @@ class LoyaltyViewController: UITableViewController {
     let LEVELS_URL: String = "/api/loyalty-program"
     let USER_INFO: String = "/api/users/me"
 
+    @IBOutlet var yourLevelLbl: UILabel!
     
     let userDefaults = NSUserDefaults.standardUserDefaults() // create userDefaults to load token
     
@@ -37,35 +38,27 @@ class LoyaltyViewController: UITableViewController {
     
     @IBOutlet var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         super.viewDidLoad()
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        
-        
-
         getLevels()
-
         print(levels)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return levels.count
     }
 
@@ -134,6 +127,8 @@ class LoyaltyViewController: UITableViewController {
                 let currentExpString:String = String(Int(currentExp))
                 let currentLvl:Int = userDataJSON["lvl"].int!
                 
+                self.yourLevelLbl.text = "You're a level \(currentLvl) \n Level up and earn rewards!"
+                
                 print("cell", indexPath.row, "exp", currentExp, "lvl", currentLvl, "%",(currentExp/cellExp))
                 
                 if (currentLvl == cellLevel){
@@ -156,10 +151,9 @@ class LoyaltyViewController: UITableViewController {
         
         cell.levelLabel.text = String(cellLevel)
         cell.levelLabel.layer.cornerRadius = 15
+        cell.lvlProgressBar.layer.cornerRadius = 15
         cell.lvlProgressBar.progressTintColor = (functions.colorWithHexString(progressBarColor))
         cell.lvlProgressBar.trackTintColor = (functions.colorWithHexString("#DDDDDD"))
-        cell.lvlProgressBar.layer.cornerRadius = 15
-        
         return cell
     }
     

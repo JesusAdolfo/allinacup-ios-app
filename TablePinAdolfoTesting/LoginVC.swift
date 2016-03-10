@@ -26,6 +26,8 @@ class LoginVC: UIViewController {
     
     var user_token: String = ""
     
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,9 +126,9 @@ class LoginVC: UIViewController {
                         if let token = auth["token"].string{
                             
                             
-                            let userDefaults = NSUserDefaults.standardUserDefaults()
-                            userDefaults.setValue(token, forKey: "token")
-                            userDefaults.synchronize()
+                            self.userDefaults.setValue(token, forKey: "token")
+                            self.userDefaults.setValue(email, forKey: "email")
+                            self.userDefaults.synchronize()
                             
                             
                             
