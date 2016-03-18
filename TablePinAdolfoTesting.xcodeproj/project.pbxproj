@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B028FDD31C9272DA007F2DA8 /* UpdateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B028FDD21C9272DA007F2DA8 /* UpdateInfoViewController.swift */; };
+		B028FDD71C9277C4007F2DA8 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B028FDD61C9277C4007F2DA8 /* SettingsTableViewController.swift */; };
+		B028FDDB1C95FB8B007F2DA8 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B028FDDA1C95FB8B007F2DA8 /* ChangePasswordViewController.swift */; };
+		B028FDDD1C9B9771007F2DA8 /* RecoverPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B028FDDC1C9B9771007F2DA8 /* RecoverPasswordViewController.swift */; };
 		B04CFDFE1C82259600819886 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFDFD1C82259600819886 /* RegisterViewController.swift */; };
 		B04CFE001C87AA2300819886 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFDFF1C87AA2300819886 /* SocketIOManager.swift */; };
 		B04CFE071C880AF900819886 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04CFE021C880AF900819886 /* BaseCell.swift */; };
@@ -57,6 +61,10 @@
 /* Begin PBXFileReference section */
 		184B7B594E8482D51E8B380A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA9A6A58C922B4B83601194 /* Pods-TablePinAdolfoTesting.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TablePinAdolfoTesting.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TablePinAdolfoTesting/Pods-TablePinAdolfoTesting.debug.xcconfig"; sourceTree = "<group>"; };
+		B028FDD21C9272DA007F2DA8 /* UpdateInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateInfoViewController.swift; sourceTree = "<group>"; };
+		B028FDD61C9277C4007F2DA8 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		B028FDDA1C95FB8B007F2DA8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		B028FDDC1C9B9771007F2DA8 /* RecoverPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoverPasswordViewController.swift; sourceTree = "<group>"; };
 		B04CFDFD1C82259600819886 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B04CFDFF1C87AA2300819886 /* SocketIOManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		B04CFE021C880AF900819886 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 				B06A3A5D1C174A7F00AD6211 /* Info.plist */,
 				B04CFE101C89302E00819886 /* OrderTableViewCell.swift */,
 				B06A3A631C174BB000AD6211 /* RestaurantTableViewController.swift */,
+				B028FDD61C9277C4007F2DA8 /* SettingsTableViewController.swift */,
 				B081F4361C1B157900F6CC84 /* Food.swift */,
 				B06C60C21C1CD03000944137 /* MenuTableViewCell.swift */,
 				B05FA6191C3DA8D600EC0C17 /* LoginVC.swift */,
@@ -181,6 +190,9 @@
 				B04CFDFF1C87AA2300819886 /* SocketIOManager.swift */,
 				B04CFE0E1C892F5400819886 /* OrdersTableViewController.swift */,
 				B04CFE121C8CE15500819886 /* Order.swift */,
+				B028FDD21C9272DA007F2DA8 /* UpdateInfoViewController.swift */,
+				B028FDDA1C95FB8B007F2DA8 /* ChangePasswordViewController.swift */,
+				B028FDDC1C9B9771007F2DA8 /* RecoverPasswordViewController.swift */,
 			);
 			path = TablePinAdolfoTesting;
 			sourceTree = "<group>";
@@ -347,9 +359,11 @@
 				B06C60C31C1CD03000944137 /* MenuTableViewCell.swift in Sources */,
 				B04CFE071C880AF900819886 /* BaseCell.swift in Sources */,
 				B052D8F21C7C0A3100BD607F /* Levels.swift in Sources */,
+				B028FDD31C9272DA007F2DA8 /* UpdateInfoViewController.swift in Sources */,
 				B081F4371C1B157900F6CC84 /* Food.swift in Sources */,
 				B04CFE0A1C880AF900819886 /* UserCell.swift in Sources */,
 				B0EB5FFE1C4EED0B0057E462 /* FoodItem.swift in Sources */,
+				B028FDD71C9277C4007F2DA8 /* SettingsTableViewController.swift in Sources */,
 				B06A3A521C174A7F00AD6211 /* AppDelegate.swift in Sources */,
 				B04CFE001C87AA2300819886 /* SocketIOManager.swift in Sources */,
 				B052D8F81C7E8DAF00BD607F /* Functions.swift in Sources */,
@@ -357,10 +371,12 @@
 				B0E7AFEE1C62577100BBCFF9 /* SWRevealViewController.m in Sources */,
 				B04CFDFE1C82259600819886 /* RegisterViewController.swift in Sources */,
 				B04CFE111C89302E00819886 /* OrderTableViewCell.swift in Sources */,
+				B028FDDB1C95FB8B007F2DA8 /* ChangePasswordViewController.swift in Sources */,
 				B052D8F61C7D63F800BD607F /* LevelTableViewCell.swift in Sources */,
 				B04CFE0F1C892F5400819886 /* OrdersTableViewController.swift in Sources */,
 				B0F85DAB1C4F3B1C0086FB6A /* User.swift in Sources */,
 				B04CFE131C8CE15600819886 /* Order.swift in Sources */,
+				B028FDDD1C9B9771007F2DA8 /* RecoverPasswordViewController.swift in Sources */,
 				B0F85DB11C51BEF80086FB6A /* CustomTabBarController.swift in Sources */,
 				B0E7AFF41C681FFB00BBCFF9 /* ChatViewController.swift in Sources */,
 			);

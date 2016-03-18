@@ -65,7 +65,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "handleSingleTap:")
+        tapRecognizer.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tapRecognizer)
         //asks for nickname forever unless you enter one
         if nickname == nil {
             askForNickname()
@@ -79,6 +81,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func handleSingleTap(recognizer: UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+
     @IBAction func sendMessage(sender: AnyObject) {
         if tvMessageEditor.text.characters.count > 0 {
             SocketIOManager.sharedInstance.sendMessage(tvMessageEditor.text!, withNickname: nickname)

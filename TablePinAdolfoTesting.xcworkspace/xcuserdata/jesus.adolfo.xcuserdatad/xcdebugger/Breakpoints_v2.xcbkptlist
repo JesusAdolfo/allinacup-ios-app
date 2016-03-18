@@ -417,23 +417,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TablePinAdolfoTesting/ChatViewController.swift"
-            timestampString = "479093996.70268"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TablePinAdolfoTesting/ChatViewController.swift"
-            timestampString = "479093996.70268"
+            timestampString = "479870774.584539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -449,11 +433,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TablePinAdolfoTesting/ChatViewController.swift"
-            timestampString = "479274623.220696"
+            timestampString = "479870774.584539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/ChatViewController.swift"
+            timestampString = "479870774.584539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "askForNickname()"
             landmarkType = "5">
          </BreakpointContent>
@@ -465,11 +465,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TablePinAdolfoTesting/ChatViewController.swift"
-            timestampString = "479274623.220696"
+            timestampString = "479870774.584539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -520,6 +520,307 @@
             endingLineNumber = "112"
             landmarkName = "getPreviousOrders()"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/UpdateInfoViewController.swift"
+            timestampString = "479360665.961515"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "3"
+            endingLineNumber = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.UpdateInfoViewController.init (TablePinAdolfoTesting.UpdateInfoViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; TablePinAdolfoTesting.UpdateInfoViewController"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/UpdateInfoViewController.swift"
+                  timestampString = "479960475.456937"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.UpdateInfoViewController.init (TablePinAdolfoTesting.UpdateInfoViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TablePinAdolfoTesting.UpdateInfoViewController&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/UpdateInfoViewController.swift"
+                  timestampString = "479960475.45711"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/SettingsTableViewController.swift"
+            timestampString = "479570773.458411"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/ChangePasswordViewController.swift"
+            timestampString = "479873154.649671"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "changePasswordPressed(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/LoginVC.swift"
+            timestampString = "479960049.209817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "LoginVC"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.LoginVC.userDefaults.getter : __ObjC.NSUserDefaults"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/LoginVC.swift"
+                  timestampString = "479960475.474523"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.LoginVC.init (TablePinAdolfoTesting.LoginVC.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TablePinAdolfoTesting.LoginVC&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/LoginVC.swift"
+                  timestampString = "479960475.478852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "289">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960448.694381"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "RecoverPasswordViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960449.214216"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "RecoverPasswordViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.RecoverPasswordViewController.__deallocating_deinit"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+                  timestampString = "479960475.50718"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.RecoverPasswordViewController.init (TablePinAdolfoTesting.RecoverPasswordViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; TablePinAdolfoTesting.RecoverPasswordViewController"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+                  timestampString = "479960475.507466"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TablePinAdolfoTesting.RecoverPasswordViewController.init (TablePinAdolfoTesting.RecoverPasswordViewController.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;TablePinAdolfoTesting.RecoverPasswordViewController&gt;"
+                  moduleName = "TablePinAdolfoTesting"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesus.adolfo/Code/TablePinAdolfoTesting/TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+                  timestampString = "479960475.507951"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960449.638182"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960450.03792"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960450.453059"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960451.902311"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "didReceiveMemoryWarning()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960452.270296"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TablePinAdolfoTesting/RecoverPasswordViewController.swift"
+            timestampString = "479960452.846093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "RecoverPasswordViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

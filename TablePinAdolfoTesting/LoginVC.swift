@@ -18,7 +18,7 @@ class LoginVC: UIViewController {
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var facebookLogInButton: UIButton!
     
-    @IBOutlet var forgotLabel: UILabel!
+    @IBOutlet var forgotButton: UIButton!
     @IBOutlet var registerButton: UIButton!
     
     @IBOutlet weak var txtLoginEmail: UITextField!
@@ -43,7 +43,7 @@ class LoginVC: UIViewController {
         logoTextLabel.center.x -= view.bounds.width
         facebookLogInButton.center.x -= view.bounds.width
         logInButton.center.x -= view.bounds.width
-        forgotLabel.center.x -= view.bounds.width
+        forgotButton.center.x -= view.bounds.width
         registerButton.center.x -= view.bounds.width
         
         
@@ -55,7 +55,7 @@ class LoginVC: UIViewController {
             self.logoTextLabel.center.x += self.view.bounds.width
             self.logInButton.center.x += self.view.bounds.width
             self.facebookLogInButton.center.x += self.view.bounds.width
-            self.forgotLabel.center.x += self.view.bounds.width
+            self.forgotButton.center.x += self.view.bounds.width
             self.registerButton.center.x += self.view.bounds.width
             
             
@@ -128,6 +128,7 @@ class LoginVC: UIViewController {
                             
                             self.userDefaults.setValue(token, forKey: "token")
                             self.userDefaults.setValue(email, forKey: "email")
+                            self.userDefaults.setValue(password, forKey: "password")
                             self.userDefaults.synchronize()
                             
                             
